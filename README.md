@@ -6,6 +6,8 @@ Apporta es la aplicacion en la que puedes aportar momento o dinero, aportando mo
 
 Este backed consta de unos servicios web rest construidos en ruby rails 5.
 
+EN LA CARPETA APPORTA ESTA LA APP DE IONIC. (en este momento esta desconectada)
+
 Things you may want to cover:
 
 * Ruby version: Rails 5
