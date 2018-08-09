@@ -1,0 +1,22 @@
+version: '3'
+services:
+  db:
+    image: postgres:10
+    container_name: pgfedesoft_api
+    volumes:
+      - ./dbdata/etc:/etc/postgresql
+      - ./dbdata/log:/var/log/postgresql
+      - ./dbdata/pgdata:/var/lib/postgresql/data
+  web:
+    build: .
+    container_name: railsfedesoft_api
+    command: bundle exec puma
+    volumes:
+      - .:/myapp
+      - ./data/bundle:/bundle
+    ports:
+      - "3000:3000"
+    environment:
+      - BUNDLE_PATH=/bundle
+    depends_on:
+      - db
